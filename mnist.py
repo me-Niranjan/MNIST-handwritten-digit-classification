@@ -18,4 +18,26 @@ from tensorflow.math import confusion_matrix
 # %%
 print(type(x_train))
 print(x_train.shape, y_train.shape, x_test.shape, y_test.shape)
+
+# %%
+print(x_train[10])
+# %%
+plt.imshow(x_train[50])
+plt.show()
+print(y_train[50])
+# %%
+print(np.unique(y_train))
+print(np.unique(y_test))
+# %%
+x_train = x_train/255
+x_test = x_test/255
+# %%
+print(x_train[10])
+# %%
+model = keras.Sequential([
+    keras.layers.Flatten(input_shape=(28,28)),
+    keras.layers.Dense(50, activation='relu'),
+    keras.layers.Dense(50, activation='relu'),
+    keras.layers.Dense(10, activation='sigmoid')
+])
 # %%
